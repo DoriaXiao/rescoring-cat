@@ -1,0 +1,3 @@
+param_task_id,n_pairs,adaptive_type,mean_diff_old,mean_diff_new,pct_new_better
+egma-math,89,FALSE,0.6847094072027103,0.7305578409380337,40.44943820224719
+same-different-selection,153,FALSE,1.0674224049248295,0.851407362857581,66.66666666666666

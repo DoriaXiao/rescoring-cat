@@ -1,0 +1,28 @@
+# ── Child-level / restricted data (LEVANTE) ──────────────────
+# Per-child derived dataset; regenerated locally by study2_empirical/01.
+output/data/comparison.csv
+# Raw LEVANTE inputs must never be committed.
+all_scores.csv
+item parameter comparison.csv
+task_data_nested.rds
+run_data.rds
+*task_data*.rds
+
+# ── R session / project cruft ────────────────────────────────
+.Rhistory
+.RData
+.Rapp.history
+.Rproj.user/
+*.Rproj.user
+.Renviron
+.DS_Store
+
+# ── Python (app) ─────────────────────────────────────────────
+__pycache__/
+*.pyc
+.venv/
+venv/
+.gradio/
+
+# ── Logs / scratch ───────────────────────────────────────────
+*.log
