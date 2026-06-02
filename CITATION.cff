@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the preprint below."
+title: "Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy"
+type: software
+authors:
+  - given-names: Xingyao
+    family-names: Xiao
+    affiliation: Stanford University
+  - given-names: Ben
+    family-names: Domingue
+    affiliation: Stanford University
+  - given-names: Nilam
+    family-names: Ram
+    affiliation: Stanford University
+  - given-names: Michael C.
+    family-names: Frank
+    affiliation: Stanford University
+year: 2026
+license: MIT
+# TODO once posted: add repository-code, url, and the preprint DOI.
+preferred-citation:
+  type: article
+  title: "Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy"
+  authors:
+    - given-names: Xingyao
+      family-names: Xiao
+    - given-names: Ben
+      family-names: Domingue
+    - given-names: Nilam
+      family-names: Ram
+    - given-names: Michael C.
+      family-names: Frank
+  year: 2026
+  notes: "Preprint"
+  # doi: 10.xxxxx/xxxxx

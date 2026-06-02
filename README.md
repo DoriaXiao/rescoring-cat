@@ -1,9 +1,13 @@
 # Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy
 
-Code and results for the paper:
+Code and results for the **preprint**:
 
 > Xiao, X., Domingue, B., Ram, N., & Frank, M. C. (2026).
-> *Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy.*
+> *Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy.* Preprint.
+> <!-- TODO: add PsyArXiv/arXiv link + DOI once posted -->
+
+> ⚠️ **Preprint / working version.** This repository accompanies a preprint that
+> has not yet been peer-reviewed; methods and results may be revised.
 
 **Interactive companion app:** [CAT Rescoring Explorer](https://huggingface.co/spaces/doriax/cat-rescoring-explorer)
 (source in [`app/`](app/))
@@ -155,6 +159,20 @@ Study 1 is fully self-contained. Study 2 uses child-level data from the LEVANTE
 project (Kachergis et al., 2025), which is not redistributed here; the empirical
 scripts and all aggregate result tables are included so the methods are fully
 transparent. See [`study2_empirical/README.md`](study2_empirical/README.md).
+
+## Citation
+
+If you use this code, please cite the preprint (see [`CITATION.cff`](CITATION.cff)):
+
+```bibtex
+@article{xiao2026rescoring,
+  title   = {Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy},
+  author  = {Xiao, Xingyao and Domingue, Ben and Ram, Nilam and Frank, Michael C.},
+  year    = {2026},
+  note    = {Preprint},
+  url      = {https://github.com/<user>/rescoring-cat}
+}
+```
 
 ## License
 
