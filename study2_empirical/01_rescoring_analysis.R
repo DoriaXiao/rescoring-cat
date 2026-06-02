@@ -514,7 +514,7 @@ p_scatter <- ggplot(comparison, aes(theta_old, theta_new_1pl, color = site)) +
 ggsave(file.path(fig_dir, "fig_scatter.png"), p_scatter,
        width = 8.5, height = 7, dpi = 250, bg = "white")
 
-# Density (2x2, blog/paper)
+# Density (2x2)
 p_density <-
   ggplot(comparison, aes(x = diff_1pl, fill = site)) +
   geom_density(alpha = 0.3, color = NA) +

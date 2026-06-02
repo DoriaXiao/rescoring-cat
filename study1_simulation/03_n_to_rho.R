@@ -3,7 +3,7 @@
 ## Maps respondent sample size to item parameter recovery (ρ)
 ## Matches main simulation settings from run_main_simulation.R
 ##
-## Output: n_to_rho.rds, blog_fig_n_to_rho.png
+## Output: output/data/n_to_rho.rds, figures/paper/fig_n_to_rho.png
 ## Runtime: ~10 min
 ## ============================================================
 
@@ -118,10 +118,10 @@ p <- ggplot(n_to_rho, aes(x = N, y = rho_mean)) +
     axis.text       = element_text(size = 9, color = "#444444")
   )
 
-dir.create(here("figures", "blog"), showWarnings = FALSE, recursive = TRUE)
-ggsave(here("figures", "blog", "blog_fig_n_to_rho.png"), p,
+dir.create(here("figures", "paper"), showWarnings = FALSE, recursive = TRUE)
+ggsave(here("figures", "paper", "fig_n_to_rho.png"), p,
        width = 8, height = 4.5, dpi = 300, bg = "white")
-cat("Saved figures/blog/blog_fig_n_to_rho.png\n")
+cat("Saved figures/paper/fig_n_to_rho.png\n")
 
 # ── Print interpretive summary ────────────────────────────────
 

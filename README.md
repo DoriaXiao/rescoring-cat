@@ -57,8 +57,7 @@ rescoring-cat/
 │   │                             #   (comparison.csv is child-level → gitignored)
 │   └── tables/                   # result tables (CSV) reproduced in the paper
 ├── figures/
-│   ├── paper/                    # publication figures
-│   └── blog/                     # N→ρ figure
+│   └── paper/                    # publication figures
 ├── archive/                  # superseded / earlier code, kept for provenance
 ├── rescoring-cat.Rproj
 └── README.md
@@ -118,7 +117,7 @@ Requires access to LEVANTE child-level data, which is **not** included here. See
 | **App. B** | Pool-to-pool robustness | `study1/appendix/pool_sensitivity*` | `figures/paper/fig_sim_sensitivity.png` |
 | **App. C** | Estimated rescoring bank (CAT-R̂) | `study1/appendix/perturbed_rescoring*` | `figures/paper/fig_sim_perturbed.png` |
 | **App. D** | Item-level shift & stopping behavior | `study2/02` | `figures/paper/fig_item_level_shift.png`, `fig_stopping_by_ability.png` |
-| Sec 3.2 | N→ρ recovery benchmark | `study1/03` | `figures/blog/blog_fig_n_to_rho.png` |
+| Sec 3.2 | N→ρ recovery benchmark | `study1/03` | `figures/paper/fig_n_to_rho.png` |
 
 Additional robustness scripts in `study1_simulation/appendix/`:
 `widespread_spread*.R` (wider difficulty spread, b ~ N(0,1.5²)),

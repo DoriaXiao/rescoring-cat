@@ -359,7 +359,7 @@ rho_data <- res %>% filter(mode == "correlated")
 
 # Anchor the scoring/selection error annotations at a rho level where
 # the CAT-O vs CAT-R gap is clearly visible. We pick the rho closest to
-# 0.22 (close to the blog figure's anchor point).
+# 0.22 (anchor point of the N->rho recovery curve).
 anchor_rho <- rho_data$rho[which.min(abs(rho_data$rho - 0.22))]
 
 anchor_vals <- rho_data %>%
