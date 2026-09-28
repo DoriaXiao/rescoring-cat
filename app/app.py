@@ -1,7 +1,7 @@
 """
 CAT Rescoring Explorer
-Interactive companion to: "Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy"
-Xiao, Domingue, Frank, & Ram (2026)
+Interactive companion to: "Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"
+Xiao, Domingue, Ram, & Frank (in press), Educational and Psychological Measurement
 
 Deploy on Hugging Face Spaces with Gradio SDK.
 """
@@ -248,7 +248,7 @@ def tab1_sweep(n_exam, n_reps):
     scoring = np.array(all_metrics["CAT-O"]["rmse"]) - np.array(all_metrics["CAT-R"]["rmse"])
     selection = np.array(all_metrics["CAT-R"]["rmse"]) - np.array(all_metrics["CAT-B"]["rmse"])
     ax2.fill_between(rho_levels, 0, scoring, alpha=0.4, color="#E8604C", label="Scoring error (fixable)")
-    ax2.fill_between(rho_levels, 0, selection, alpha=0.4, color="#2D5FA0", label="Selection error (not fixable)")
+    ax2.fill_between(rho_levels, 0, selection, alpha=0.4, color="#D4A843", label="Selection error (not fixable)")
     style_ax(ax2, "Cross-population alignment (ρ)", "RMSE gap",
              "Scoring error >> Selection error")
     ax2.legend(fontsize=10)
@@ -261,19 +261,21 @@ def tab1_sweep(n_exam, n_reps):
                  color=COLORS[c], linewidth=2, label=c, marker="o", markersize=4)
     ax3.axhline(0, color="grey", linestyle="--", alpha=0.5)
     style_ax(ax3, "Cross-population alignment (ρ)", "Mean Bias",
-             "Bias is negligible — error is variance, not systematic shift")
+             "Rescoring removes most bias (compare CAT-O with CAT-R)")
     ax3.legend(fontsize=10)
     fig3.tight_layout()
 
     # Summary text
     avg_pct = np.mean(all_metrics["CAT-O"]["pct_bias"])
+    avg_pct_r = np.mean(all_metrics["CAT-R"]["pct_bias"])
     avg_scoring_pct = np.mean(scoring / (scoring + selection + 1e-10) * 100)
     summary = (
         f"**Key findings:**\n"
-        f"- Scoring error accounts for ~{avg_scoring_pct:.0f}% of total CAT error (fixable by rescoring)\n"
-        f"- Bias accounts for only {avg_pct:.2f}% of MSE on average (error is variance, not systematic shift)\n"
+        f"- Scoring error accounts for ~{avg_scoring_pct:.0f}% of miscalibration-attributable error (fixable by rescoring)\n"
+        f"- Bias as % of MSE, averaged across ρ: {avg_pct:.2f}% for operational scores (CAT-O), {avg_pct_r:.2f}% after rescoring (CAT-R)\n"
         f"- CAT-R stays close to CAT-B across all ρ levels\n\n"
-        f"*Simulation: {n_exam} examinees × {n_reps} reps per ρ level*"
+        f"*Simulation: {n_exam} examinees × {n_reps} reps per ρ level. Small runs are noisy; the paper's estimates "
+        f"use 100 examinees × 50 replications per condition, so raise the sliders to approach them.*"
     )
 
     return fig1, fig2, fig3, summary
@@ -428,10 +430,12 @@ def tab4_explore(rho, cat_length, n_exam, n_reps):
 
     summary += (
         f"\n**Error decomposition:**\n"
-        f"- Total CAT error: {total:.3f}\n"
+        f"- Miscalibration-attributable error: {total:.3f}\n"
         f"- Scoring error (fixable): {scoring:.3f} ({pct_s:.0f}%)\n"
         f"- Selection error (not fixable): {selection:.3f} ({100-pct_s:.0f}%)\n"
-        f"- Bias as % of MSE: {m['CAT-O']['pct_bias']:.2f}%\n"
+        f"- Bias as % of MSE: {m['CAT-O']['pct_bias']:.2f}% for operational scores (CAT-O), "
+        f"{m['CAT-R']['pct_bias']:.2f}% after rescoring (CAT-R)\n\n"
+        f"*Single-point runs are noisy at small sample sizes; raise the sliders for stable estimates.*\n"
     )
 
     return fig, summary
@@ -444,8 +448,8 @@ def tab4_explore(rho, cat_length, n_exam, n_reps):
 DESCRIPTION = """
 # 🎯 CAT Rescoring Explorer
 
-**Interactive companion to:** *"Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy"*
-Xiao, Domingue, Frank, & Ram (2026) — *Applied Psychological Measurement*
+**Interactive companion to:** *"Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"*
+Xiao, Domingue, Ram, & Frank (in press), *Educational and Psychological Measurement*
 
 Explore how rescoring — recomputing ability estimates with improved item parameters — recovers accuracy from miscalibrated computerized adaptive tests (CATs).
 
@@ -467,8 +471,8 @@ with gr.Blocks(
 
     with gr.Tab("📊 Cross-Population Misalignment"):
         gr.Markdown(
-            "**Paper claim:** Scoring error >> selection error across all ρ levels. "
-            "Bias is negligible (<0.1% of MSE). Rescoring recovers most accuracy."
+            "**Paper claim:** Scoring error dominates selection error across all ρ levels. "
+            "After rescoring, bias is below 0.5% of MSE. Rescoring recovers most miscalibration-attributable error."
         )
         with gr.Row():
             t1_exam = gr.Slider(10, 100, value=30, step=10, label="Examinees per cell")
@@ -532,10 +536,10 @@ with gr.Blocks(
 
     gr.Markdown(
         "---\n"
-        "**Paper:** Xiao, X., Domingue, B. W., Frank, M. C., & Ram, N. (2026). "
-        "*Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy.* "
-        "Applied Psychological Measurement.\n\n"
-        "**Code:** [github.com/DoriaXiao](https://github.com/DoriaXiao) | "
+        "**Paper:** Xiao, X., Domingue, B. W., Ram, N., & Frank, M. C. (in press). "
+        "Recovering accuracy from miscalibrated item banks: Scoring error is fixable, selection error is not. "
+        "*Educational and Psychological Measurement*.\n\n"
+        "**Code:** [github.com/DoriaXiao/rescoring-cat](https://github.com/DoriaXiao/rescoring-cat) | "
         "**LEVANTE:** [levante-network.org](https://levante-network.org)"
     )
 

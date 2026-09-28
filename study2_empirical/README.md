@@ -19,8 +19,10 @@ Sys.setenv(LEVANTE_PILOTS = "/path/to/levante-pilots")
 Sys.setenv(LEVANTE_RUNS   = "/path/to/levante-runs")
 ```
 
-LEVANTE data access: see Kachergis et al. (2025) and the LEVANTE project
-(https://github.com/levante-framework). The raw item-level trial data and
+LEVANTE data access: the LEVANTE pilot data analyzed in the paper are publicly
+available through the LEVANTE Data Repository 2026.1 release
+(https://stanford.redivis.com/datasets/68kn-csrddrz5x). See also Kachergis et al.
+(2025) and the LEVANTE project (https://github.com/levante-framework). The raw item-level trial data and
 per-child ability estimates are governed by the project's human-subjects data
 agreements.
 

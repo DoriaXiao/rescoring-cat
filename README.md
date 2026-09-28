@@ -1,13 +1,14 @@
-# Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy
+# Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not
 
-Code and results for the **preprint**:
+Code and results for:
 
-> Xiao, X., Domingue, B., Ram, N., & Frank, M. C. (2026).
-> *Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy.* Preprint.
-> <!-- TODO: add PsyArXiv/arXiv link + DOI once posted -->
+> Xiao, X., Domingue, B. W., Ram, N., & Frank, M. C. (in press).
+> Recovering accuracy from miscalibrated item banks: Scoring error is fixable,
+> selection error is not. *Educational and Psychological Measurement*.
 
-> ⚠️ **Preprint / working version.** This repository accompanies a preprint that
-> has not yet been peer-reviewed; methods and results may be revised.
+A preprint of the originally submitted version, under the earlier title *Good Kitty,
+Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy*, is on PsyArXiv:
+<https://doi.org/10.31234/osf.io/gk368_v1>.
 
 **Interactive companion app:** [CAT Rescoring Explorer](https://huggingface.co/spaces/doriax/cat-rescoring-explorer)
 (source in [`app/`](app/))
@@ -106,7 +107,7 @@ Requires access to LEVANTE child-level data, which is **not** included here. See
 | **Figure 2** | RMSE under random noise σ | `study1/04` | `figures/paper/fig_sim_rmse_noise.png` |
 | **Figure 3** | RMSE under structured shifts Δb | `study1/04` | `figures/paper/fig_sim_rmse_shift.png` |
 | **Figure 4** | Stepwise RMSE by test length (ρ=.75, 200 reps) | `study1/05` | `figures/paper/fig_sim_stepwise.png` |
-| **Figure 5** | Score shifts by site & task | `study2/01` | `figures/paper/fig_density.png`, `fig_scatter.png` |
+| **Figure 5** | Score shifts by site & task | `study2/01` | `figures/paper/fig_density.png` |
 | **Table 1** | Selection/scoring conditions | (conceptual) | — |
 | **Table 2** | Bias as % of MSE | `study1/04` | `output/tables/results_sim_bias_decomposition.csv` |
 | **Table 3** | Item-parameter alignment (old vs new) | `study2/01` | `output/tables/results_by_site.csv` (+ params) |
@@ -114,10 +115,12 @@ Requires access to LEVANTE child-level data, which is **not** included here. See
 | **Table 5** | Score differences by task & site | `study2/01` | `output/tables/results_by_site.csv` |
 | **Table 6** | Model effect (1PL vs multigroup IRT) | `study2/01` | `output/tables/results_table_c_model_effect.csv` |
 | **Table 7** | Correlation with age | `study2/01` | `output/tables/results_age_validity.csv` |
-| **App. B** | Pool-to-pool robustness | `study1/appendix/pool_sensitivity*` | `figures/paper/fig_sim_sensitivity.png` |
-| **App. C** | Estimated rescoring bank (CAT-R̂) | `study1/appendix/perturbed_rescoring*` | `figures/paper/fig_sim_perturbed.png` |
-| **App. D** | Item-level shift & stopping behavior | `study2/02` | `figures/paper/fig_item_level_shift.png`, `fig_stopping_by_ability.png` |
-| Sec 3.2 | N→ρ recovery benchmark | `study1/03` | `figures/paper/fig_n_to_rho.png` |
+| **Table 8** | Cross-task convergent validity (bootstrap CIs) | `study2/03` | `output/tables/results_cross_task_bootstrap.csv` |
+| **Supp. A** | Bias and correlation by ρ | `study1/04` | `figures/paper/fig_sim_bias_rho.png`, `fig_sim_cor_rho.png` |
+| **Supp. B** | Pool-to-pool robustness | `study1/appendix/pool_sensitivity*` | `figures/paper/fig_sim_sensitivity.png` |
+| **Supp. C** | Estimated rescoring bank (CAT-R̂) | `study1/appendix/perturbed_rescoring*` | `figures/paper/fig_sim_perturbed.png` |
+| **Supp. D** | Item-level shift & stopping behavior | `study2/02` | `figures/paper/fig_item_level_shift.png`, `fig_stopping_by_ability.png` |
+| Discussion | N→ρ recovery benchmark (cited in text; figure not in the paper) | `study1/03` | `figures/paper/fig_n_to_rho.png` |
 
 Additional robustness scripts in `study1_simulation/appendix/`:
 `widespread_spread*.R` (wider difficulty spread, b ~ N(0,1.5²)),
@@ -155,21 +158,22 @@ R ≥ 4.1 recommended. See [`DEPENDENCIES.R`](DEPENDENCIES.R) for a one-line ins
 ## Data availability
 
 Study 1 is fully self-contained. Study 2 uses child-level data from the LEVANTE
-project (Kachergis et al., 2025), which is not redistributed here; the empirical
-scripts and all aggregate result tables are included so the methods are fully
-transparent. See [`study2_empirical/README.md`](study2_empirical/README.md).
+project (Kachergis et al., 2025), publicly available through the LEVANTE Data
+Repository 2026.1 release at <https://stanford.redivis.com/datasets/68kn-csrddrz5x>.
+The data are not redistributed here; the empirical scripts and all aggregate result
+tables are included so the methods are fully transparent. See [`study2_empirical/README.md`](study2_empirical/README.md).
 
 ## Citation
 
-If you use this code, please cite the preprint (see [`CITATION.cff`](CITATION.cff)):
+If you use this code, please cite the article (see [`CITATION.cff`](CITATION.cff)):
 
 ```bibtex
 @article{xiao2026rescoring,
-  title   = {Good Kitty, Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy},
-  author  = {Xiao, Xingyao and Domingue, Ben and Ram, Nilam and Frank, Michael C.},
+  author  = {Xiao, Xingyao and Domingue, Benjamin W. and Ram, Nil{\`a}m and Frank, Michael C.},
+  title   = {Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not},
+  journal = {Educational and Psychological Measurement},
   year    = {2026},
-  note    = {Preprint},
-  url      = {https://github.com/<user>/rescoring-cat}
+  note    = {In press}
 }
 ```
 
