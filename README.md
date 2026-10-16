@@ -1,10 +1,11 @@
-# Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not
+# Recovering Accuracy From Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not
 
 Code and results for:
 
-> Xiao, X., Domingue, B. W., Ram, N., & Frank, M. C. (in press).
+> Xiao, X., Domingue, B. W., Ram, N., & Frank, M. C. (2026).
 > Recovering accuracy from miscalibrated item banks: Scoring error is fixable,
 > selection error is not. *Educational and Psychological Measurement*.
+> <https://doi.org/10.1177/00131644261486854>
 
 A preprint of the originally submitted version, under the earlier title *Good Kitty,
 Bad Bank? Rescoring Miscalibrated CATs Improves Accuracy*, is on PsyArXiv:
@@ -170,10 +171,10 @@ If you use this code, please cite the article (see [`CITATION.cff`](CITATION.cff
 ```bibtex
 @article{xiao2026rescoring,
   author  = {Xiao, Xingyao and Domingue, Benjamin W. and Ram, Nil{\`a}m and Frank, Michael C.},
-  title   = {Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not},
+  title   = {Recovering Accuracy From Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not},
   journal = {Educational and Psychological Measurement},
   year    = {2026},
-  note    = {In press}
+  doi     = {10.1177/00131644261486854}
 }
 ```
 

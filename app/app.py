@@ -1,7 +1,7 @@
 """
 CAT Rescoring Explorer
-Interactive companion to: "Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"
-Xiao, Domingue, Ram, & Frank (in press), Educational and Psychological Measurement
+Interactive companion to: "Recovering Accuracy From Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"
+Xiao, Domingue, Ram, & Frank (2026), Educational and Psychological Measurement, https://doi.org/10.1177/00131644261486854
 
 Deploy on Hugging Face Spaces with Gradio SDK.
 """
@@ -448,8 +448,8 @@ def tab4_explore(rho, cat_length, n_exam, n_reps):
 DESCRIPTION = """
 # 🎯 CAT Rescoring Explorer
 
-**Interactive companion to:** *"Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"*
-Xiao, Domingue, Ram, & Frank (in press), *Educational and Psychological Measurement*
+**Interactive companion to:** *"Recovering Accuracy From Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"*
+Xiao, Domingue, Ram, & Frank (2026), *Educational and Psychological Measurement* · [https://doi.org/10.1177/00131644261486854](https://doi.org/10.1177/00131644261486854)
 
 Explore how rescoring — recomputing ability estimates with improved item parameters — recovers accuracy from miscalibrated computerized adaptive tests (CATs).
 
@@ -536,9 +536,9 @@ with gr.Blocks(
 
     gr.Markdown(
         "---\n"
-        "**Paper:** Xiao, X., Domingue, B. W., Ram, N., & Frank, M. C. (in press). "
+        "**Paper:** Xiao, X., Domingue, B. W., Ram, N., & Frank, M. C. (2026). "
         "Recovering accuracy from miscalibrated item banks: Scoring error is fixable, selection error is not. "
-        "*Educational and Psychological Measurement*.\n\n"
+        "*Educational and Psychological Measurement*. [https://doi.org/10.1177/00131644261486854](https://doi.org/10.1177/00131644261486854)\n\n"
         "**Code:** [github.com/DoriaXiao/rescoring-cat](https://github.com/DoriaXiao/rescoring-cat) | "
         "**LEVANTE:** [levante-network.org](https://levante-network.org)"
     )

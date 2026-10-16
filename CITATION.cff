@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the article below."
-title: "Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"
+title: "Recovering Accuracy From Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"
 type: software
 authors:
   - given-names: Xingyao
@@ -25,7 +25,7 @@ license: MIT
 year: 2026
 preferred-citation:
   type: article
-  title: "Recovering Accuracy from Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"
+  title: "Recovering Accuracy From Miscalibrated Item Banks: Scoring Error Is Fixable, Selection Error Is Not"
   authors:
     - given-names: Xingyao
       family-names: Xiao
@@ -41,4 +41,6 @@ preferred-citation:
       orcid: "https://orcid.org/0000-0002-7551-4378"
   journal: "Educational and Psychological Measurement"
   year: 2026
-  status: in-press
+  status: advance-online
+  doi: "10.1177/00131644261486854"
+  url: "https://doi.org/10.1177/00131644261486854"
